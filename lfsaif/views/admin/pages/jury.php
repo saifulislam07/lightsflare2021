@@ -1,0 +1,1 @@
+<iframe src="<?php echo site_url('AdminController/jurys'); ?>" name="frame" style="width: 100%; min-height: 700px; border: 0"></iframe>
