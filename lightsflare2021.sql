@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2021 at 05:00 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.3.26
+-- Generation Time: Nov 16, 2021 at 12:54 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.4.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `lightsflare2021_new`
+-- Database: `lightsflare2021`
 --
 
 -- --------------------------------------------------------
@@ -49,9 +49,10 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `name`, `phone`, `email`, `password`, `address`, `randcode`, `date`, `status`, `updated_by`, `type`, `ipAddress`, `created_at`, `Update_at`) VALUES
-(1, 'Saiful', '01675909939', 'saiful@gmail.com', '12e8730c239a761a9b37f7f546252361', '', '', '0000-00-00', 'Active', 0, 'Admin', '', '2020-07-29 04:45:31', '2020-07-29 04:45:31'),
+(1, 'Saiful', '01675909939', 'saiful@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '', '', '0000-00-00', 'Active', 0, 'Admin', '', '2020-07-29 04:45:31', '2020-07-29 04:45:31'),
 (2, 'Muhammad Amdad Hossain', '+8801824288449', 'amdadphoto@gmail.com', 'a3579a19183ebbfe30baa9e263138324', '', 'B39Y4', '0000-00-00', 'Active', 0, 'Admin', '', '2020-08-03 15:09:51', '2020-08-03 15:09:51'),
-(1426, 'Saiful Islam', '', 'saiful.rana@gmail.com', '96e79218965eb72c92a549dd5a330112', '', '', '0000-00-00', 'Active', 0, 'User', '::1', '2021-06-25 07:26:56', '2021-06-25 07:26:56');
+(1426, 'Saiful Islam', '', 'saiful.rana@gmail.com', '96e79218965eb72c92a549dd5a330112', '', '', '0000-00-00', 'Active', 0, 'User', '::1', '2021-06-25 07:26:56', '2021-06-25 07:26:56'),
+(1429, 'abc', '', 'abc@gmail.com', 'b0baee9d279d34fa1dfd71aadb908c3f', '', '', '0000-00-00', 'Active', 0, 'User', '', '2021-11-16 09:07:49', '2021-11-16 09:07:49');
 
 -- --------------------------------------------------------
 
@@ -625,6 +626,20 @@ INSERT INTO `products` (`id`, `user_id`, `totoal_img`, `price`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `publications`
+--
+
+CREATE TABLE `publications` (
+  `publication_id` int(11) NOT NULL,
+  `tile` varchar(120) NOT NULL,
+  `description` text NOT NULL,
+  `logo` text NOT NULL,
+  `url` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `rules`
 --
 
@@ -699,7 +714,8 @@ CREATE TABLE `use_details` (
 --
 
 INSERT INTO `use_details` (`id`, `user_id`, `name`, `title`, `email`, `phone`, `country`, `bio`, `age`, `image`, `created_at`, `updated_at`) VALUES
-(1, 1426, 'Saiful Islam', '', 'saiful.rana@gmail.com', '', '11', ' ', 0, '1618063051069_IMG_5783-01.jpg', '2021-06-25 07:26:56', '2021-06-25 09:28:50');
+(1, 1426, 'Saiful Islam', '', 'saiful.rana@gmail.com', '', '11', ' ', 0, '1618063051069_IMG_5783-01.jpg', '2021-06-25 07:26:56', '2021-06-25 09:28:50'),
+(2, 1429, 'abc', '', 'abc@gmail.com', '', '18', '', 0, '', '2021-11-16 09:07:49', '0000-00-00 00:00:00');
 
 --
 -- Indexes for dumped tables
@@ -802,6 +818,12 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `publications`
+--
+ALTER TABLE `publications`
+  ADD PRIMARY KEY (`publication_id`);
+
+--
 -- Indexes for table `rules`
 --
 ALTER TABLE `rules`
@@ -833,7 +855,7 @@ ALTER TABLE `use_details`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1428;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1430;
 
 --
 -- AUTO_INCREMENT for table `ambassador`
@@ -926,6 +948,12 @@ ALTER TABLE `products`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `publications`
+--
+ALTER TABLE `publications`
+  MODIFY `publication_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `rules`
 --
 ALTER TABLE `rules`
@@ -947,7 +975,7 @@ ALTER TABLE `temporary`
 -- AUTO_INCREMENT for table `use_details`
 --
 ALTER TABLE `use_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
