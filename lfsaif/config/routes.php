@@ -1,6 +1,6 @@
 <?php
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 //$route['default_controller'] = 'Welcome';
 $route['default_controller'] = 'FrontendController/index';
 
@@ -13,6 +13,11 @@ $route['login'] = 'AuthController/login';
 $route['check-Number'] = 'FrontendController/checkNumber';
 $route['uploadImages-2021'] = 'FrontendController/uploadImages2021';
 $route['submit-photos'] = 'SubmissionController/submit_photos';
+$route['publications'] = 'PublicationController/publications';
+$route['publications_list'] = 'PublicationController/publications_list';
+$route['edit_publication/(:any)'] = 'PublicationController/edit_publication/$1';
+$route['delete_publication/(:any)'] = 'PublicationController/delete_publication/$1';
+
 
 
 $route['dashboard'] = 'AdminController/dashboard';
