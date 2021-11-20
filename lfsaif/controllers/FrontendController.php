@@ -20,11 +20,19 @@ class FrontendController extends CI_Controller
 	public function index()
 	{
 		$data['title'] = 'Home';
+		$data['featuredin']	= $this->Common_model->get_data_list('publications');
+
 		$data['mainContent'] = $this->load->view('frontend/pages/home', $data, true);
 		$this->load->view('frontend/include/masterTemp', $data);
 	}
 
 	public function jurys()
+	{
+		$data['title'] = 'JURY';
+		$data['mainContent'] = $this->load->view('frontend/pages/jurys', $data, true);
+		$this->load->view('frontend/include/masterTemp', $data);
+	}
+	public function featuredIn()
 	{
 		$data['title'] = 'JURY';
 		$data['mainContent'] = $this->load->view('frontend/pages/jurys', $data, true);

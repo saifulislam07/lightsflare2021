@@ -10,6 +10,7 @@ $route['login'] = 'AuthController/login';
 
 
 //2021 route list
+$route['featuredIn'] = 'FrontendController/featuredIn';
 $route['check-Number'] = 'FrontendController/checkNumber';
 $route['uploadImages-2021'] = 'FrontendController/uploadImages2021';
 $route['submit-photos'] = 'SubmissionController/submit_photos';
