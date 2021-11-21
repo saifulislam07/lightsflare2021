@@ -35,7 +35,8 @@ class FrontendController extends CI_Controller
 	public function featuredIn()
 	{
 		$data['title'] = 'JURY';
-		$data['mainContent'] = $this->load->view('frontend/pages/jurys', $data, true);
+		$data['featuredin']	= $this->Common_model->get_data_list('publications');
+		$data['mainContent'] = $this->load->view('frontend/pages/newsub/featuredIn', $data, true);
 		$this->load->view('frontend/include/masterTemp', $data);
 	}
 
@@ -424,12 +425,14 @@ class FrontendController extends CI_Controller
 
 		endif;
 	}
+
 	public function checkNumber()
 	{
 		$data['title'] = 'Check Number';
 		$data['mainContent'] = $this->load->view('frontend/pages/newsub/checkNumber', $data, true);
 		$this->load->view('frontend/include/masterTemp', $data);
 	}
+
 	public function uploadImages2021()
 	{
 		$data['title'] = 'Upload Image';
